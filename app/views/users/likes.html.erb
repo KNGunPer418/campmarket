@@ -1,0 +1,27 @@
+<div class="user container">
+  <!-- プロフィール部分 -->
+  <div class="profile">
+    <% if @products.any? %>
+      <div><%= page_entries_info @products %></div>
+      <% @products.each do |product| %>
+      <div class="product">
+        <%= link_to details_path(product) do %>
+          <%= image_tag "/images/#{product.image1}" %>
+        <% end %>
+          <div class="product-info">
+              <div class~="product-name">
+                  <h1><%= product.name %></h1>
+              </div>
+              <div class="price">
+                  <p>￥<%= product.price %></p>
+              </div>
+          </div>
+      </div>
+      <% end %>
+      <div><%= paginate @products %></div>
+    <% else %>
+      <p>お気に入りにした商品はありません。</p>
+    <% end %>
+  </div>
+  <%= render partial: 'users/mypagenav', :locals => {:val => "likes"} %>
+</div>

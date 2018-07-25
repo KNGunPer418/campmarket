@@ -1,0 +1,20 @@
+<div class="sign_in">
+  <div class="contents">
+    <div class="sign_in_form">
+      <%= form_for @user, url: sign_in_path do |f| %>
+        <p>メールアドレス</p>
+        <div class="field">
+          <%= f.email_field :email, placeholder: "例) camp@exam.com" %>
+        </div>
+        <p>パスワード</p>
+        <div class="field">
+          <%= f.password_field :password, placeholder: "英数字で8文字以上" %>
+        </div>
+        <button>サインインする</button>
+      <% end %>
+    </div>
+    <div class="sign_in_link">
+      <p>アカウントをお持ちですか？ <%= link_to("新規登録はこちら", sign_up_path) %></p>
+    </div>
+  </div>
+</div>

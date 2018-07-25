@@ -1,0 +1,270 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// ユーザー登録・サインイン部分・出品ページ・商品編集ページ
+.sign_up, .sign_in, .product_new, .product_edit, .user_edit {
+  background-color: #eee;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  .contents {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    // height: 600px;
+    width: 700px;
+  }
+  h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: cursive;
+  }
+  p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  form {
+    margin-top: 15px;
+    input[type="text"], input[type="email"], input[type="password"], input[type="number"], select {
+      width: 100%;
+      display: block;
+      height: 36px;
+      box-sizing: border-box;
+      font-size: 16px;
+      border: 0;
+      padding: 3px 10px;
+    }
+    input[type="file"] {
+      margin-bottom: 10px;
+    }
+    textarea {
+      width: 100%;
+      display: block;
+      height: 54px;
+      box-sizing: border-box;
+      font-size: 16px;
+      border: 0;
+      padding: 3px 10px;
+    }
+    .field {
+      margin-bottom: 8px;
+      border-radius: 3px;
+      border: 1px solid #eee;
+    }
+    label {
+      font-size: 14px;
+    }
+    button {
+      background-color: #0099FF;
+      display: block;
+      color: white;
+      border: 1px solid darken(#ccc, 5%);
+      border-radius: 3px;
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      &:hover {
+        background-color: lighten(#0099FF, 10%);
+      }
+    }
+    .current_img {
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+  .sign_up_form, .sign_in_form, .product_new_form, .product_edit_form, .user_edit_form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    .user_image {
+      width: 200px;
+      margin-right: 50px;
+      margin-bottom: 10px;
+      >div {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+      }
+    }
+  }
+  .sign_in_link, .sign_up_link {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+// プロフィールページ
+.user {
+  h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  // プロフィール部分
+  .profile {
+    width: 50%;
+    padding-top: 60px;
+    padding: 60px 40px 40px;
+    background-color: #ffffff;
+    display: inline-block;
+    .image {
+      width: 200px;
+      margin-right: 50px;
+      >div {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+      }
+    }
+  }
+  // 情報部分
+  .info {
+    margin-top: 20px;
+    flex: 1;
+    .status {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      p {
+        flex: 1;
+      }
+      a{
+        color: inherit;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .name {
+      display: flex;
+    }
+    h1 {
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 200;
+      margin-right: 30px;
+    }
+  }
+}
+
+
+
+//ユーザーの商品一覧ページ
+.product {
+  display: inline-block;
+  width: 30%;
+  margin-right: 10px;
+  border: 1px solid #eeeeee;
+  img {
+    width: 100%;
+    height: 65%;
+  }
+  h1 {
+    font-size: 14px;
+  }
+}
+
+//ユーザーの商品詳細ページ
+.detail {
+    width: 50%;
+    padding: 30px 40px 40px;
+    background-color: #ffffff;
+    display: inline-block;
+    .status {
+      text-align: center;
+      padding: 10px;
+      border: 2px solid lighten(#003399, 10%);
+    }
+    .name {
+      margin-top: 15px;
+      h1 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+    .image {
+      text-align: center;
+      img {
+        width: 250px;
+        height: 250px;
+      }
+    }
+    p {
+      font-size: 14px;
+      color: #777;
+      margin: 20px 0;
+    }
+    .toedit {
+      a {
+        background-color: #FF8C00;
+        display: block;
+        color: white;
+        border: 1px solid darken(#ccc, 5%);
+        border-radius: 3px;
+        width: 100%;
+        margin: 15px 0;
+        padding: 10px;
+        font-size: 18px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        &:hover {
+          background-color: lighten(#FF8C00, 10%);
+        }
+      }
+    }
+    .destroy {
+      a {
+        color: #777;
+        text-decoration: none;
+      }
+    }
+}
+
+// マイページナビ
+.mypage {
+  &-profile, &-user_products, &-product_detail, &-likes {
+   position: fixed;
+   left: 65%; 
+  }
+  &-new, &-product_edit, &-user_edit {
+   position: fixed;
+   top: 15%;
+   left: 65%;
+  }
+  display: inline-block;
+  width: 10%;
+  padding: 30px 60px 30px 20px;
+  background-color: #ffffff;
+  a {
+    text-decoration: none;
+  }
+  h1 {
+    font-weight: bold;
+    color: #000;
+  }
+  &-user_edit {
+    h1 {
+      font-size: 18px;
+    }
+  }
+  ul{
+    margin-top: 10px;
+    li {
+      margin-bottom: 30px;
+      a {
+        color: #777;
+      }
+    }
+  }
+}
+

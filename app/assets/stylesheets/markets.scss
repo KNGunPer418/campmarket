@@ -1,0 +1,185 @@
+// Place all the styles related to the markets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// トップページ
+.list {
+  h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  // プロフィール部分
+  .products-list {
+    width: 50%;
+    padding-top: 60px;
+    padding: 60px 40px 40px;
+    background-color: #ffffff;
+    display: inline-block;
+    .product {
+      display: inline-block;
+      width: 30%;
+      margin-right: 10px;
+      border: 1px solid #eeeeee;
+      img {
+        width: 100%;
+        height: 65%;
+      }
+    }
+    // 情報部分
+    .info {
+      margin-top: 20px;
+      flex: 1;
+      .name {
+        h1 {
+          color: #808080;
+          font-size: 10px;
+          font-weight: bold;
+        }
+      }
+      .price {
+        display: inline-block;
+      }
+      .favorite {
+        //お気に入り登録状態
+        color: red;
+      }
+      .n-favorite{
+        //お気に入り未登録
+        color: #808080;
+      }
+      .status {
+        float: right;
+        display: inline-block;
+        background-color: red;
+        padding: 3px;
+        border-radius: 5px;
+        p {
+          color: white;
+        }
+      }
+    }
+  }
+}
+ 
+//商品詳細ページ
+.details {
+  h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  //   商品詳細部分
+  .product-details{
+    width: 50%;
+    padding-top: 60px;
+    padding: 60px 40px 40px;
+    background-color: #ffffff;
+    display: inline-block;
+    .name {
+        text-align: center;
+        h1 {
+          font-size: 24px;
+          font-weight: bold;
+        }
+      }
+    .image {
+      width: 100%;
+      height: 300px;
+      text-align: center;
+      border: 1px solid #eeeeee;
+      img {
+        width: 300px;
+        height: 300px;
+      }
+      >div {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+      }
+    }
+    // 情報部分
+    .info {
+      margin-top: 20px;
+      flex: 1;
+      .product-category {
+        font-size: 12px;
+        color: #808080;
+      }
+      .price {
+        margin: 20px 0;
+        h2 {
+          font-size: 24px;
+          font-weight: bold;
+        }
+      }
+      .topayment {
+        a {
+          background-color: #0099FF;
+          display: block;
+          color: white;
+          border: 1px solid darken(#ccc, 5%);
+          border-radius: 3px;
+          width: 100%;
+          margin: 15px 0;
+          padding: 10px;
+          font-size: 18px;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+          &:hover {
+            background-color: lighten(#0099FF, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+ 
+//検索フォーム  
+.searchform {
+  &-top, &-details, &-payment{
+   position: fixed;
+   left: 65%; 
+  }
+   &-sign_up {
+   position: fixed;
+   top: 15%;
+   left: 65%;
+   }
+  display: inline-block;
+  width: 15%;
+  padding: 30px 40px 30px 20px;
+  background-color: #ffffff;
+  h1 {
+    font-weight: bold;
+  }
+  ul{
+    margin-top: 10px;
+    li {
+      margin-bottom: 30px;
+      input {
+        padding: 5px;
+      }
+      select {
+        width: 100%;
+        padding: 5px;
+      }
+      .price_search_field {
+        margin-top: 10px;
+        .price_search {
+          display: inline-block;
+          width: 25%;
+        }
+      }
+    }
+  }
+  button {
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    background-color: #FF8C00;
+    border: none;
+    &:hover {
+      background-color: lighten(#FF8C00, 10%);
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<div class="product_edit user">
+  <div class="contents">
+    <div class="product_edit_form">
+      <%= form_for @product, url: product_edit_path, method: :post do |f| %>
+      <p>商品名(必須)</p>
+        <div class="field">
+          <%= f.text_field :name, placeholder: "コードキャンプのTシャツ" %>
+        </div>
+      <p>説明(必須)</p>
+        <div class="field">
+          <%= f.text_area :description, placeholder: "コードキャンプで作成されたオリジナルTシャツです" %>
+        </div>
+      <p>カテゴリー(必須)</p>
+        <div class="field">
+          <%= f.select :category_id, categories.map{|t| [t.name, t.id]}, :include_blank => true %>
+        </div>
+      <p>価格(必須)</p>
+      <div class="field">
+        <%= f.number_field :price, placeholder: "価格を入力してください" %>
+      </div>
+      <p>現在の選択中の画像</p>
+      <div class="current_img">
+          <%= image_tag "/images/#{@product.image1}" %>
+          <%= image_tag "/images/#{@product.image2}" %>
+          <%= image_tag "/images/#{@product.image3}" %>
+      </div>
+      <div>
+        画像1
+        <%= f.file_field :image1 %>
+      </div>
+      <div>
+        画像2
+        <%= f.file_field :image2 %>
+      </div>
+      <div>
+        画像3
+        <%= f.file_field :image3 %>
+      </div>
+        <button>更新する</button>
+      <% end %>
+    </div>
+  </div>
+  <%= render partial: 'users/mypagenav', :locals => {:val => "product_edit"} %>
+</div>

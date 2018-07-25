@@ -1,0 +1,30 @@
+<div class="user_edit">
+  <div class=contents>
+    <div class="user_edit_form">
+      <%= form_for @user, url: edit_path, method: :post do |f| %>
+      <div class="user_image">
+          <div style="background: url('<%= image_url(@user) %>'); background-position: 50%; background-size: cover;"></div>
+      </div>
+      <div>画像: <%= f.file_field :image %></div>
+      <p>ニックネーム(必須)</p>
+        <div class="field">
+          <%= f.text_field :name, placeholder: "例) フリマ子" %>
+        </div>
+      <p>プロフィール</p>
+        <div class="field">
+          <%= f.text_area :profile, placeholder: "例) こんにちは、フリマ子です!" %>
+        </div>
+      <p>パスワード(必須)(更新をしない場合は現在のパスワードを入力してください)</p>
+        <div class="field">
+          <%= f.password_field :password, placeholder: "英数字で8文字以上" %>
+        </div>
+      <p>パスワード(確認用)(必須)</p>
+      <div class="field">
+        <%= f.password_field :password_confirmation, placeholder: "パスワード確認用" %>
+      </div>
+        <button>更新する</button>
+      <% end %>
+    </div>
+  </div>
+  <%= render partial: 'users/mypagenav', :locals => {:val => "user_edit"} %>
+</div>

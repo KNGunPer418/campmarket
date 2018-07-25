@@ -1,0 +1,6 @@
+ja:
+ enums:
+  product:
+   status:
+    exhibit: 出品中
+    soldout: 売り切れ

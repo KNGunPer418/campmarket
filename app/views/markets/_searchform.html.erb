@@ -1,0 +1,28 @@
+<nav class="searchform searchform-<%= val %>">
+    <h1>詳細検索</h1>
+    <%= form_tag(top_path, method: :get) do %>
+        <ul>
+          <li>
+            キーワード追加
+            <%= text_field_tag :word, params[:word], placeholder: "例)値下げ" %>
+          </li>
+          <li>
+            カテゴリー選択
+            <%= select_tag :category, options_from_collection_for_select(categories, :id, :name, params[:category]), :include_blank => true %>
+          </li>
+          <li>
+            価格
+            <div class="price_search_field">
+              <%= text_field_tag :rangemin, params[:rangemin], class: "price_search" %>円
+              ~
+              <%= text_field_tag :rangemax, params[:rangemax], class:  "price_search" %>円
+            </div>
+          </li>
+          <li>
+            並び替え
+            <%= select_tag :order, options_for_select([["新しい順", 1], ["古い順", 2], ["価格の高い順", 3], ["価格の安い順", 4]], params[:order]), :include_blank => true %>
+          </li>
+        </ul>
+        <button>検索</button>
+    <% end %>
+</nav>

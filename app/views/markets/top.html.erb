@@ -1,0 +1,35 @@
+<div class="list container">
+  <!-- プロフィール部分 -->
+  <div class="products-list">
+    <% if @products.any? %>
+    <div><%= page_entries_info @products %></div>
+      <% @products.each do |product| %>
+      <div class="product">
+        <%= link_to details_path(product) do %>
+          <%= image_tag "/images/#{product.image1}" %>
+        <% end %>
+          <div class="info">
+              <div class="name">
+                  <h1><%= product.name %></h1>
+              </div>
+              <div class="price">
+                  <p>￥<%= product.price %></p>
+              </div>
+              <%= link_to likes_process_path(product) do %>
+                <i class=" fa fa-thumbs-up <%= product.likes_from?(current_user)? "favorite" : "n-favorite" %>"></i>
+              <% end %>
+              <% if product.status == "soldout" %>
+              <div class="status">
+                  <p>SOLD</p>
+              </div>
+              <% end %>
+          </div>
+      </div>
+      <% end %>
+      <div><%= paginate @products %></div>
+    <% else %>
+      <p>対象の商品は見つかりませんでした。</p>
+    <% end %>
+  </div>
+  <%= render partial: "markets/searchform", :locals => {:val => "top"} %>
+</div>

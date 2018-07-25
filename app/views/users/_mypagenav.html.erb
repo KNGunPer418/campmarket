@@ -1,0 +1,22 @@
+<nav class="mypage mypage-<%= val %>">
+    <%= link_to profile_path do %>
+      <h1>マイページ</h1>
+    <% end %>
+    <ul>
+      <li>
+        <%= link_to('出品する', new_path) %>
+      </li>
+      <li>
+        <%= link_to('出品中の商品', user_product_path) %>
+      </li>
+      <li>
+        <%= link_to('お気に入りの商品', likes_path) %>
+      </li>
+      <li>
+        <%= link_to("プロフィール更新", edit_path) %>
+      </li>
+      <li>
+        <%= link_to('サインアウト', sign_out_path) %>
+      </li>
+    </ul>
+</nav>
